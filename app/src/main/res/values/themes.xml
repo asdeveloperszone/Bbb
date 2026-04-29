@@ -242,5 +242,6 @@
         <item name="colorSurface">@android:color/white</item>
 
     </style>
-
+<style name="Theme.YTDLnis" parent="Theme.Red" />
+    
 </resources>
