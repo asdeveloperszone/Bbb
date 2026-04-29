@@ -30,13 +30,6 @@ import java.util.concurrent.TimeUnit
 
 object RuntimeManager {
     val idProcessMap = Collections.synchronizedMap(HashMap<String, Process>())
-    var pythonLocation: PackageBase.PackageLocation = emptyLocation
-    var ffmpegLocation: PackageBase.PackageLocation = emptyLocation
-    var aria2Location: PackageBase.PackageLocation = emptyLocation
-    var nodeLocation : PackageBase.PackageLocation = emptyLocation
-    var denoLocation : PackageBase.PackageLocation = emptyLocation
-    var quickJsLocation : PackageBase.PackageLocation = emptyLocation
-    var ytdlpPath: File? = null
 
     // Fallback empty location so lateinit doesn't crash if init() is skipped before setup
     private val emptyLocation = PackageBase.PackageLocation(
@@ -48,6 +41,14 @@ object RuntimeManager {
         isAvailable  = false,
         canUninstall = false
     )
+
+    var pythonLocation: PackageBase.PackageLocation = emptyLocation
+    var ffmpegLocation: PackageBase.PackageLocation = emptyLocation
+    var aria2Location: PackageBase.PackageLocation = emptyLocation
+    var nodeLocation : PackageBase.PackageLocation = emptyLocation
+    var denoLocation : PackageBase.PackageLocation = emptyLocation
+    var quickJsLocation : PackageBase.PackageLocation = emptyLocation
+    var ytdlpPath: File? = null
 
     var initialized = false
         private set
